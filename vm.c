@@ -2,6 +2,7 @@
 #include "value.h"
 #include "debug.h"
 #include "common.h"
+#include "compiler.h"
 #include <stdio.h>
 
 Vm vm; 
@@ -31,12 +32,17 @@ void free_Vm(){
 
 }
 
+void compile(char *source){
 
-InterpretResult interpret(Chunk *chunk){
-  vm.chunk = chunk;
-  vm.ip    = vm.chunk->code; 
-  return run();
 }
+
+InterpretResult interpret(char  *source){
+   compile(source);
+   return INTERPRET_OK;
+}
+
+
+
 
 InterpretResult run(){
    for(;;){
@@ -76,17 +82,14 @@ InterpretResult run(){
 
        case OP_ADD:    	BINARY_OP(+);  break;
       
-
        case OP_SUBTRACT: BINARY_OP(-);  break;
       
-
-       case OP_MULTIPLY:{
+       case OP_MULTIPLY:
          	  BINARY_OP(*);  break;
-      } 
-
-       case OP_DIVIDE:{
+       case OP_DIVIDE:
          	  BINARY_OP(/); break;
-      } 
+        
+
 
      }
   }

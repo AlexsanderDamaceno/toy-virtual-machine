@@ -35,7 +35,7 @@ void free_Vm();
 void resetStack();
 void push(Value value);
 Value pop();
-InterpretResult interpret(Chunk *chunk);
+InterpretResult interpret(char  *source);
 InterpretResult run();
 
 #endif
