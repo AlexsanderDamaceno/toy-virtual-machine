@@ -1,5 +1,5 @@
-#ifndef clox_scanner_h
-#define clox_scanner_h
+#ifndef SCANNER_H
+#define SCANNER_H
 
 
 
@@ -47,16 +47,9 @@ Scanner scanner;
 
 
 
-
-
-void initScanner( char* source);
+void initScanner(char *source);
 Token scanToken();
-Token makeToken(TokenType Type);
-Token errorToken(char *message);
-void skipWhitespace();
-char peek();
-char advance();
-int isAtEnd();
+
 
 
 #endif

@@ -32,13 +32,23 @@ void free_Vm(){
 
 }
 
-void compile(char *source){
 
-}
 
 InterpretResult interpret(char  *source){
-   compile(source);
-   return INTERPRET_OK;
+
+   Chunk chunk; 
+   init_chunk(&chunk); 
+
+   if(!compile(source , &chunk)){
+     free_chunk(&chunk);
+     return  INTERPRET_COMPILE_ERROR;
+   }
+
+   InterpretResult result = run(); 
+   free_chunk(&chunk); 
+
+   
+   return result;
 }
 
 

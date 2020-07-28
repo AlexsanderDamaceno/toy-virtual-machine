@@ -1,6 +1,13 @@
-#ifdef  COMPILER_H
+#ifndef COMPILER_H
 #define COMPILER_H
 
-void compiler(char *source){
+#include "vm.h"
+
+int compile( char* source, Chunk* chunk);
+
+
+
+
+
 
 #endif
